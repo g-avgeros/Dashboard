@@ -7,6 +7,8 @@ import { MapsComponent } from './maps/maps.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { OrdersComponent } from './orders/orders.component';
+import { HoursComponent } from './hours/hours.component';
+import { ConnectorTypeComponent } from './connector-type/connector-type.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { OrdersComponent } from './orders/orders.component';
     FooterComponent,
     NavBarComponent,
     OrdersComponent,
+    HoursComponent,
+    ConnectorTypeComponent,
   ],
   imports: [
     BrowserModule,
