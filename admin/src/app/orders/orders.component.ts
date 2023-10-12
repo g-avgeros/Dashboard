@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../services/session.service';
 import { Subscription } from 'rxjs';
-import { Session, SessionAPIList } from '../interfaces/session';
+import { Session, SessionAPIList, SessionModel } from '../interfaces/session';
 
 @Component({
   selector: 'app-orders',
@@ -10,7 +10,13 @@ import { Session, SessionAPIList } from '../interfaces/session';
 })
 export class OrdersComponent implements OnInit {
   constructor(private sessionService: SessionService) {}
-
+  session: SessionModel = {
+    sub: null!,
+    error: null!,
+    loading: false,
+    postId: null!,
+    data: null,
+  };
   loading = false;
   //sessionList: Session[] | undefined = [];
   subscription: Subscription | undefined;
@@ -21,22 +27,21 @@ export class OrdersComponent implements OnInit {
     console.log(this.sessionService.getSessionDetails());
   }
 
-  // getSessionDetails(postId: string) {
-  //   this.post.error;
-  //   this.post.loading = true;
+  getSessionDetails() {
+    this.loading = true;
 
-  //   this.post.sub = this.postService.getPostDetails(postId).subscribe({
-  //     next: (res: any) => {
-  //       (this.post.data = res),
-  //         console.log(this.post.data),
-  //         (this.post.loading = false),
-  //         this.post.sub.unsubscribe();
-  //     },
-  //     error: (err) => {
-  //       (this.post.error = err),
-  //         (this.post.loading = false),
-  //         this.post.sub.unsubscribe();
-  //     },
-  //   });
-  // }
+    this.session.sub = this.sessionService.getSessionDetails().subscribe({
+      next: (res: any) => {
+        (this.session.data = res),
+          console.log(this.session.data),
+          (this.session.loading = false),
+          this.session.sub.unsubscribe();
+      },
+      error: (err) => {
+        (this.session.error = err),
+          (this.session.loading = false),
+          this.session.sub.unsubscribe();
+      },
+    });
+  }
 }

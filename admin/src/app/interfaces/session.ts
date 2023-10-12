@@ -20,3 +20,13 @@ export interface SessionAPIList {
   status: boolean;
   data: any;
 }
+
+import { Subscription } from 'rxjs';
+
+export interface SessionModel {
+  sub: Subscription;
+  error: string;
+  loading: boolean;
+  postId: string;
+  data: any;
+}
