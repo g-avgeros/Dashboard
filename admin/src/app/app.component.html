@@ -67,45 +67,48 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row align-items-start">
-        <div class="col">
-          <app-hours></app-hours>
-        </div>
-        <div class="col">
-          <app-connector-type></app-connector-type>
-        </div>
-        <div class="col">
-          One of three columns
-        </div>
-      </div>
-      <div class="col-sm-6">
 
 
-      </div>
-      <section class="content">
-        <div class="container-fluid">
 
 
-          <div class="row">
 
-            <div class="col-md-8">
-              <!-- <app-orders></app-orders> -->
-            </div>
+    <section class="content">
+      <div class="container-fluid">
 
+
+        <div class="row">
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <app-total-locations></app-total-locations>
           </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <app-total-sessions></app-total-sessions>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <app-total-kwh></app-total-kwh>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <app-total-revenue></app-total-revenue>
+          </div>
+          <!-- <app-total-locations></app-total-locations>
+          <app-total-sessions></app-total-sessions>
+          <app-total-kwh></app-total-kwh>
+          <app-total-revenue></app-total-revenue> -->
+
 
         </div>
-      </section>
 
-    </div>
-
-
-    <aside class="control-sidebar control-sidebar-dark">
-
-    </aside>
-
+      </div>
+    </section>
+    <app-maps></app-maps>
   </div>
-  <app-footer></app-footer>
+</div>
 
-  <router-outlet></router-outlet>
+<aside class="control-sidebar control-sidebar-dark">
+
+</aside>
+
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>

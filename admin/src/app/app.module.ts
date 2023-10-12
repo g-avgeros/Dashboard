@@ -9,6 +9,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { OrdersComponent } from './orders/orders.component';
 import { HoursComponent } from './hours/hours.component';
 import { ConnectorTypeComponent } from './connector-type/connector-type.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { TotalLocationsComponent } from './total-locations/total-locations.component';
+import { TotalKwhComponent } from './total-kwh/total-kwh.component';
+import { TotalRevenueComponent } from './total-revenue/total-revenue.component';
+import { TotalSessionsComponent } from './total-sessions/total-sessions.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +24,13 @@ import { ConnectorTypeComponent } from './connector-type/connector-type.componen
     OrdersComponent,
     HoursComponent,
     ConnectorTypeComponent,
+    TotalLocationsComponent,
+    TotalKwhComponent,
+    TotalRevenueComponent,
+    TotalSessionsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, GoogleMapsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
