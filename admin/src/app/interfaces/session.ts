@@ -15,3 +15,8 @@ export interface Session {
   _id: string;
   location_id: string;
 }
+
+export interface SessionAPIList {
+  status: boolean;
+  data: any;
+}

@@ -9,7 +9,7 @@ const apiUrl =
 export class SessionService {
   constructor(private http: HttpClient) {}
 
-  getsSessionDetails() {
+  getSessionDetails() {
     return this.http.get(`${apiUrl}`);
   }
 }
