@@ -18,30 +18,44 @@ export class OrdersComponent implements OnInit {
     data: null,
   };
   loading = false;
-  //sessionList: Session[] | undefined = [];
   subscription: Subscription | undefined;
 
   ngOnInit(): void {
     console.log('Starting find all API call');
-    this.loading = true;
-    console.log(this.sessionService.getSessionDetails());
+    //this.loading = true;
+
+    this.subscription = this.sessionService.getSessionDetails().subscribe(
+      (data: any) => {
+        // Handle the data here, e.g., assign it to this.session or perform other actions.
+        this.session = data;
+        console.log(this.session);
+        console.log(data);
+        this.loading = false; // Set loading to false when data is received.
+      },
+      (error) => {
+        console.error('Error occurred:', error);
+        this.loading = false; // Set loading to false in case of an error.
+      }
+    );
   }
 
-  getSessionDetails() {
-    this.loading = true;
-
-    this.session.sub = this.sessionService.getSessionDetails().subscribe({
-      next: (res: any) => {
-        (this.session.data = res),
-          console.log(this.session.data),
-          (this.session.loading = false),
-          this.session.sub.unsubscribe();
-      },
-      error: (err) => {
-        (this.session.error = err),
-          (this.session.loading = false),
-          this.session.sub.unsubscribe();
-      },
-    });
-  }
+  // getSessionDetails() {
+  // this.loading = true;
+  // this.session.error;
+  // console.log('get session');
+  // this.sessionService.getSessionDetails().subscribe({
+  //   next: (res: any) => {
+  //     (this.session.data = res),
+  //       console.log(this.session.data),
+  //       (this.session.loading = false),
+  //       this.session.sub.unsubscribe();
+  //   },
+  //   error: (err) => {
+  //     (this.session.error = err),
+  //       (this.session.loading = false),
+  //       console.log('err'),
+  //       this.session.sub.unsubscribe();
+  //   },
+  // });
+  // }
 }

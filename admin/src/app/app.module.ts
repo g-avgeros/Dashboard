@@ -14,6 +14,7 @@ import { TotalLocationsComponent } from './total-locations/total-locations.compo
 import { TotalKwhComponent } from './total-kwh/total-kwh.component';
 import { TotalRevenueComponent } from './total-revenue/total-revenue.component';
 import { TotalSessionsComponent } from './total-sessions/total-sessions.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,12 @@ import { TotalSessionsComponent } from './total-sessions/total-sessions.componen
     TotalRevenueComponent,
     TotalSessionsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, GoogleMapsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GoogleMapsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
