@@ -15,6 +15,7 @@ import { TotalKwhComponent } from './total-kwh/total-kwh.component';
 import { TotalRevenueComponent } from './total-revenue/total-revenue.component';
 import { TotalSessionsComponent } from './total-sessions/total-sessions.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OperatorComponent } from './operator/operator.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     TotalKwhComponent,
     TotalRevenueComponent,
     TotalSessionsComponent,
+    OperatorComponent,
   ],
   imports: [
     BrowserModule,
